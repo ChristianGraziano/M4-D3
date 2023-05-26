@@ -2,7 +2,7 @@ const ApiUrl = "https://api.pexels.com/v1/"
 const ApiKey = "UZcLV44kw86Oxsl0YE30jrH73WpjxKZk34Gc7ewi1QswqxjS3gbw4MzN"
 
 const getAlbum = () => {
-    fetch(ApiUrl + "search?query=" + endpoint , {
+    fetch(ApiUrl + "search?query=nature" , {
         headers: {authorization: ApiKey}
     })
     .then((res) => {
@@ -20,11 +20,7 @@ getAlbum();
 const boardCard = document.getElementById('boardCard');
 
 
-//!  FUNZIONE PER BARRA DI RICERCA DELLE IMMAGINI
 
-const searchInput = document.getElementById('searchInput').value;
-const searchButton = document.getElementById('searchButton');
-const endpoint = searchInput.value.toLowerCase();
 
 /*FUNZIONE PER CREARE GLI ELEMENTI HTML ITERANDO GLI ELEMENTI DELL'ARRAY     
  DERIVANTE DALLA RICERCA NELLA CHIAMA AJAX*/
@@ -52,9 +48,9 @@ let albumCard = (json) => {
   
     
     const imgTitle = document.createElement('span');
-    imgTitle.innerText = photo.photographer;
+    imgTitle.innerText = "Photograph:"+ " " + photo.photographer;
     containerCard.appendChild(imgTitle)
-    
+    imgTitle.classList.add('mb-1');    
     }
 }
 

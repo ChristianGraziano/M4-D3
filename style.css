@@ -1,0 +1,7 @@
+#logo-pexels {
+    width: 6rem;
+}
+.boardCard img:hover {
+    transform: scale(1.2);
+
+}
